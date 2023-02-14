@@ -1,3 +1,8 @@
+h1,
+h4 {
+    color: #2299aa;
+}
+
 /* navigation */
 .navigation {
     z-index: 1000;
@@ -31,4 +36,52 @@
     padding-left: 2rem !important;
     padding-right: 2rem !important;
     color: #ffffff !important;
+    border: none;
+}
+
+.banner,
+#my-works {
+    background-color: #eae7dc;
+}
+
+.icon {
+    width: 100% !important;
+    color: #fff !important;
+    background-color: #2299aa;
+    border-radius: 28px;
+    height: 50px;
+    max-width: 50px;
+    background-size: 20%;
+    padding: 12px;
+    margin: auto;
+}
+
+.my-contacts .card {
+    background-color: #eae7dc;
+    border: none;
+}
+
+.my-contacts a {
+    text-decoration: none;
+}
+
+.what-i-do h4 {
+    font-weight: 600;
+}
+
+h1,
+h5 {
+    font-weight: 700;
+}
+
+hr {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+/* footer */
+.footer a {
+    text-decoration: none;
+    color: #2299aa;
+    font-style: italic;
 }
