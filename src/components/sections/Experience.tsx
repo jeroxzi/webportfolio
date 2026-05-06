@@ -20,11 +20,9 @@ export function Experience() {
           {experience.map((item, idx) => (
             <Reveal key={item.role + item.period} width="full">
               <div className="relative mb-14 group">
-                {/* Timeline Dot */}
                 <div className="absolute -left-[2.4rem] top-3 w-2.5 h-2.5 rounded-full bg-accent shadow-[0_0_12px_var(--accent)] transition-transform duration-300 group-hover:scale-150" />
                 
                 <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 transition-all hover:border-accent/30 hover:translate-x-1 overflow-hidden relative">
-                  {/* Accent Border Line */}
                   <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-accent to-accent-light scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top" />
 
                   <div className="flex flex-wrap justify-between items-start gap-4 mb-6">

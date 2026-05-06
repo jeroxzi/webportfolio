@@ -26,14 +26,11 @@ export function About() {
       <div className="max-w-[1200px] mx-auto px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          {/* Visual Side */}
           <Reveal width="full">
             <div className="relative group">
-              {/* Image Glow Effect */}
               <div className="absolute -inset-4 bg-gradient-to-br from-accent/20 to-accent-light/20 rounded-[32px] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="bg-bg-card border border-border-subtle rounded-[24px] p-6 md:p-12 relative transition-all duration-500 hover:shadow-[0_0_50px_rgba(108,99,255,0.15)] overflow-hidden">
-                {/* Decorative Background Element */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full blur-3xl -mr-16 -mt-16" />
                 
                 <div className="relative mb-10 inline-block">
@@ -65,7 +62,6 @@ export function About() {
                 </div>
               </div>
 
-              {/* Floating Badges - Responsive Positions */}
               <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 bg-bg-card-hover border border-border-subtle rounded-xl p-2 md:p-3 flex items-center gap-2 md:gap-3 shadow-2xl animate-float-badge z-20">
                 <div className="text-accent-light"><Zap size={18} className="md:size-5" /></div>
                 <div>
@@ -84,7 +80,6 @@ export function About() {
             </div>
           </Reveal>
 
-          {/* Text Side */}
           <div>
             <Reveal>
               <SectionTag>About Me</SectionTag>

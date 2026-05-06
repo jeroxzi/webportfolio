@@ -14,7 +14,6 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-28 relative overflow-hidden bg-gradient-to-b from-bg-dark to-[#03040c]">
-      {/* Background glow */}
       <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(108,99,255,0.08)_0%,transparent_60%)] pointer-events-none" />
 
       <div className="max-w-[1000px] mx-auto px-8 text-center relative z-10">

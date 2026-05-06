@@ -24,7 +24,6 @@ export function Projects() {
             <Reveal key={project.title} width="full">
               <Tilt className="h-full">
                 <div className="h-full bg-bg-card border border-border-subtle rounded-2xl p-7 flex flex-col gap-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-accent/30 hover:shadow-2xl hover:shadow-black/60 group relative overflow-hidden">
-                  {/* Subtle gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <div className="relative z-10">
@@ -74,7 +73,6 @@ export function Projects() {
             </Reveal>
           ))}
           
-          {/* GitHub CTA */}
           <Reveal delay={0.6} width="full">
             <Tilt className="h-full">
               <Link 
