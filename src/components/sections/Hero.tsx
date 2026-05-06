@@ -50,13 +50,13 @@ export function Hero() {
             <div className="absolute -inset-1 bg-gradient-to-r from-accent to-accent-light rounded-full blur opacity-40 group-hover:opacity-75 transition duration-500" />
             <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-white/10 p-1 bg-bg-card shadow-2xl">
               <Image 
-                src="/jeroxzi.png" 
+                src="./jeroxzi.png" 
                 alt="Jeroxzi Viduya" 
-                width={96} 
-                height={96} 
+                width={160} 
+                height={160}
                 priority
                 unoptimized
-                className="rounded-full object-cover w-full h-full grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 hover:scale-110 bg-[#E2E8F0]"
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
               />
             </div>
           </div>

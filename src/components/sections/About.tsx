@@ -39,7 +39,7 @@ export function About() {
                 <div className="relative mb-10 inline-block">
                   <div className="w-32 h-32 md:w-44 md:h-44 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-[0_0_40px_rgba(108,99,255,0.25)] group-hover:border-accent transition-colors duration-500 bg-[#E2E8F0]">
                     <Image 
-                      src="/jeroxzi.png" 
+                      src="./jeroxzi.png" 
                       alt="Jeroxzi Viduya" 
                       width={176} 
                       height={176} 
