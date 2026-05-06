@@ -17,7 +17,7 @@ export const siteConfig = {
   email: "jeroxzi.viduya.dev@gmail.com",
   phone: "+63 935 833 3705",
   github: "https://github.com/jeroxzi",
-  portfolio: "https://jeroxzi.github.io/webportfolio",
+  portfolio: "https://jeroxzi.github.io/JeroxziPortfolio",
 };
 
 export const navLinks = [
