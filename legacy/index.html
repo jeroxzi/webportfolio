@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeroxzi Viduya — Software Engineer</title>
+  <meta name="description"
+    content="Frontend & Full-Stack Software Engineer with 8 years of experience building responsive, accessible, high-performance web applications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ===== SKILL BARS (inline for perf) ===== */
+    .skill-bar-wrap {
+      margin-top: 0.5rem;
+    }
+
+    .skill-bar-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .skill-bar-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-bottom: 0.9rem;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Particle canvas */
+    #particles {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Gradient text utility */
+    .grad {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Section separator wave */
+    .wave-sep {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-sep svg {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <a href="#hero" class="nav-logo">&lt;JV /&gt;</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+    </ul>
+    <div class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+    <div class="hero-orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Available for new opportunities
+      </div>
+
+      <h1 class="hero-name">
+        <span>Jeroxzi</span><br>Viduya
+      </h1>
+
+      <p class="hero-title">
+        <span id="typed-text">Frontend Engineer</span><span class="typed-cursor"></span>
+        &nbsp;·&nbsp; <strong>8+ Years of Craft</strong>
+      </p>
+
+      <p class="hero-desc">
+        Building responsive, accessible, high-performance web applications using
+        <strong style="color:var(--accent)">React.js</strong>,
+        <strong style="color:var(--accent2)">Next.js</strong>,
+        <strong style="color:var(--accent)">Vue.js</strong> &amp; <strong
+          style="color:var(--accent2)">TypeScript</strong> —
+        with full-stack capability spanning eCommerce, fintech, banking, healthcare &amp; enterprise SaaS.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+          View My Work
+        </a>
+        <a href="#contact" class="btn-secondary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Get In Touch
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="8" data-suffix="+">8+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="7" data-suffix="+">7+</div>
+          <div class="hero-stat-label">Companies</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="20" data-suffix="+">20+</div>
+          <div class="hero-stat-label">Production Apps</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-count="5" data-suffix="">5</div>
+          <div class="hero-stat-label">Industry Verticals</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="parallax-section">
+    <div class="section-inner">
+      <div class="about-grid">
+
+        <!-- Visual side -->
+        <div class="about-visual reveal-left">
+          <div class="about-card-main">
+            <div class="about-avatar">JV</div>
+            <div class="about-card-name">Jeroxzi Viduya</div>
+            <div class="about-card-role">Software Engineer · Full-Stack Developer</div>
+            <ul class="about-info-list">
+              <li>
+                <span class="icon">📍</span>
+                Bulacan, Philippines
+              </li>
+              <li>
+                <span class="icon">📞</span>
+                +63 935 833 3705
+              </li>
+              <li>
+                <span class="icon">✉️</span>
+                jeroxzi16@gmail.com
+              </li>
+              <li>
+                <span class="icon">🌐</span>
+                jeroxzi.github.io/webportfolio
+              </li>
+              <li>
+                <span class="icon">💼</span>
+                github.com/jeroxzi
+              </li>
+            </ul>
+          </div>
+
+          <div class="floating-badge floating-badge-1">
+            <span style="color:#22d3ee;font-size:1.1rem">⚡</span>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">Performance Focus</div>
+              <div style="font-size:0.8rem">Core Web Vitals</div>
+            </div>
+          </div>
+
+          <div class="floating-badge floating-badge-2">
+            <span style="font-size:1rem">🛡️</span>
+            <div>
+              <div style="font-size:0.75rem;color:var(--text-muted)">OWASP Top-10</div>
+              <div style="font-size:0.8rem">Security First</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text side -->
+        <div class="about-text reveal-right" style="transition-delay:0.15s">
+          <div class="section-tag">About Me</div>
+          <h2 class="section-title">Crafting digital <span>experiences</span> that scale</h2>
+
+          <p>
+            Frontend-focused Software Engineer with <strong>8 years</strong> of experience building responsive,
+            accessible,
+            high-performance web and mobile applications. I specialize in component-based architecture, state
+            management,
+            performance optimization, and WCAG accessibility.
+          </p>
+          <p>
+            With <strong>full-stack capability</strong> in ASP.NET, Node.js, and Supabase, I enable end-to-end feature
+            ownership. My track record spans <strong>7+ companies</strong> across eCommerce, fintech, banking,
+            healthcare,
+            and enterprise SaaS.
+          </p>
+          <p>
+            Beyond writing code, I mentor junior developers, lead code reviews, and drive architecture decisions
+            that balance speed with long-term maintainability. I believe clean, tested, accessible code is
+            not a luxury — it's the baseline.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-num" data-count="8" data-suffix="+">8+</div>
+              <div class="highlight-label">Years of Experience</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num" data-count="7" data-suffix="+">7+</div>
+              <div class="highlight-label">Companies Served</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num" data-count="3" data-suffix="">3</div>
+              <div class="highlight-label">Apps in 4 Months</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num" data-count="5" data-suffix="">5</div>
+              <div class="highlight-label">Industry Verticals</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="parallax-section">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 0">
+        <div class="section-tag" style="justify-content:center">
+          <span style="display:none"></span>Technical Skills
+        </div>
+        <h2 class="section-title">Built on a <span>deep</span> tech stack</h2>
+        <p class="section-subtitle" style="margin:0 auto">
+          Full-spectrum expertise from pixel-perfect UIs to secure backend systems and cloud deployments.
+        </p>
+      </div>
+
+      <div class="skills-categories">
+
+        <!-- Frontend -->
+        <div class="skill-category reveal" data-delay="0">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon purple">⚛️</div>
+            <div>
+              <div class="skill-cat-title">Frontend Specialty</div>
+              <div class="skill-cat-desc">UI, Frameworks & Accessibility</div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag purple">React.js</span>
+            <span class="skill-tag purple">Next.js (SSR/SSG/ISR)</span>
+            <span class="skill-tag purple">Vue.js</span>
+            <span class="skill-tag purple">TypeScript</span>
+            <span class="skill-tag purple">JavaScript ES6+</span>
+            <span class="skill-tag purple">Tailwind CSS</span>
+            <span class="skill-tag purple">SCSS</span>
+            <span class="skill-tag purple">HTML5 / CSS3</span>
+            <span class="skill-tag purple">Blazor</span>
+            <span class="skill-tag purple">Electron.js</span>
+            <span class="skill-tag purple">Redux / Zustand</span>
+            <span class="skill-tag purple">TanStack Query</span>
+            <span class="skill-tag purple">GraphQL</span>
+            <span class="skill-tag purple">REST API</span>
+            <span class="skill-tag purple">WCAG 2.1 AA</span>
+            <span class="skill-tag purple">Responsive Design</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category reveal" data-delay="80">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon cyan">🗄️</div>
+            <div>
+              <div class="skill-cat-title">Backend & Databases</div>
+              <div class="skill-cat-desc">APIs, Databases & Real-time</div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag cyan">Node.js</span>
+            <span class="skill-tag cyan">Express</span>
+            <span class="skill-tag cyan">ASP.NET / C#</span>
+            <span class="skill-tag cyan">VB.NET</span>
+            <span class="skill-tag cyan">Strapi</span>
+            <span class="skill-tag cyan">Supabase</span>
+            <span class="skill-tag cyan">Firebase</span>
+            <span class="skill-tag cyan">PostgreSQL</span>
+            <span class="skill-tag cyan">MS SQL Server</span>
+            <span class="skill-tag cyan">MongoDB</span>
+            <span class="skill-tag cyan">MySQL</span>
+            <span class="skill-tag cyan">SQLite</span>
+            <span class="skill-tag cyan">Row-Level Security</span>
+            <span class="skill-tag cyan">SAP ABAP</span>
+          </div>
+        </div>
+
+        <!-- Testing & Leadership -->
+        <div class="skill-category reveal" data-delay="160">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon pink">🧪</div>
+            <div>
+              <div class="skill-cat-title">Testing, Quality & Leadership</div>
+              <div class="skill-cat-desc">Quality Assurance & Team Growth</div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag pink">Jest</span>
+            <span class="skill-tag pink">React Testing Library</span>
+            <span class="skill-tag pink">Unit / Integration Testing</span>
+            <span class="skill-tag pink">ESLint / Prettier</span>
+            <span class="skill-tag pink">Code Reviews</span>
+            <span class="skill-tag pink">Lighthouse Audits</span>
+            <span class="skill-tag pink">Core Web Vitals</span>
+            <span class="skill-tag pink">Bundle Analysis</span>
+            <span class="skill-tag pink">Mentoring</span>
+            <span class="skill-tag pink">Architecture Decisions</span>
+            <span class="skill-tag pink">Agile / Scrum</span>
+            <span class="skill-tag pink">Technical Documentation</span>
+            <span class="skill-tag pink">Design Systems</span>
+            <span class="skill-tag pink">OWASP Top-10</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="skill-category reveal" data-delay="240">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon green">🚀</div>
+            <div>
+              <div class="skill-cat-title">DevOps, eCommerce & Tools</div>
+              <div class="skill-cat-desc">Deployment, Tooling & Platforms</div>
+            </div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag green">Git / GitHub / Bitbucket</span>
+            <span class="skill-tag green">GitHub Actions (CI/CD)</span>
+            <span class="skill-tag green">Docker</span>
+            <span class="skill-tag green">Vercel</span>
+            <span class="skill-tag green">Vite / Webpack</span>
+            <span class="skill-tag green">Shopify Liquid</span>
+            <span class="skill-tag green">Headless CMS</span>
+            <span class="skill-tag green">Conversion Rate Optimization</span>
+            <span class="skill-tag green">Unity (2D/3D/AR)</span>
+            <span class="skill-tag green">Figma</span>
+            <span class="skill-tag green">Postman</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="parallax-section">
+    <div class="section-inner">
+      <div class="exp-header reveal">
+        <div class="section-tag">Experience</div>
+        <h2 class="section-title">A decade of <span>building</span></h2>
+        <p class="section-subtitle">
+          From enterprise banking systems to biotech R&amp;D platforms — delivering production-grade software across
+          industries.
+        </p>
+      </div>
+
+      <div class="exp-timeline">
+
+        <!-- Freelance Full-Stack 2026 -->
+        <div class="exp-item reveal" data-delay="0">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">Freelance Full-Stack Developer</div>
+                <div class="exp-company">Independent / Self-Employed</div>
+              </div>
+              <div class="exp-period">Jan 2026 – Apr 2026</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Architected and shipped <strong>3 production full-stack applications in 4 months</strong> across
+                healthcare, retail, and non-profit verticals — owning UI/UX design, frontend, backend, database
+                modeling, and Vercel deployment for each.</li>
+              <li>Built <strong>CompMed</strong> marketing landing page with Next.js, TypeScript, Tailwind CSS, and
+                Supabase — achieving strong Lighthouse performance scores through SSG and image optimization.</li>
+              <li>Contributed to CompMed's <strong>Laboratory System</strong> using ASP.NET and Blazor — delivering
+                secure data entry and reporting modules compliant with healthcare data-handling standards.</li>
+              <li>Designed and shipped <strong>Jodimar Inventory System</strong> (Next.js + Supabase) — full-stack
+                platform with stock tracking, sales recording, and reporting modules for daily business operations.</li>
+              <li>Led full-stack architecture for <strong>CrossWorld Church web platform</strong> — including real-time
+                chat (Supabase Realtime), mentoring workflows, and a complete LMS with Postgres RLS policies.</li>
+              <li>Built a library of reusable Tailwind components and standardized form/validation patterns across all 3
+                client projects, cutting feature delivery time substantially.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">Next.js</span>
+              <span class="exp-tech-tag">TypeScript</span>
+              <span class="exp-tech-tag">Tailwind CSS</span>
+              <span class="exp-tech-tag">Supabase</span>
+              <span class="exp-tech-tag">ASP.NET</span>
+              <span class="exp-tech-tag">Blazor</span>
+              <span class="exp-tech-tag">Vercel</span>
+              <span class="exp-tech-tag">Postgres RLS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parallel Quantum -->
+        <div class="exp-item reveal" data-delay="60">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">Frontend Web Developer (Mid-Level)</div>
+                <div class="exp-company">Parallel Quantum Corp.</div>
+              </div>
+              <div class="exp-period">Sept 2024 – Sept 2025</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Engineered responsive web and mobile applications in React.js, Next.js, and TypeScript — significantly
+                improving Lighthouse Performance scores and reducing JS bundle size through code-splitting,
+                lazy-loading, and bundle analysis.</li>
+              <li>Built and maintained a <strong>reusable component library</strong> used across multiple product
+                squads, substantially reducing duplicate code and accelerating new-feature delivery.</li>
+              <li>Wrote unit and integration tests using <strong>Jest and React Testing Library</strong> for critical UI
+                flows — achieving strong test coverage and noticeably reducing CI regression bugs.</li>
+              <li>Implemented <strong>SSR and SSG</strong> strategies in Next.js to improve SEO and time-to-interactive,
+                meaningfully cutting initial page load time and improving Core Web Vitals scores.</li>
+              <li>Mentored junior developers through pair programming and code reviews — establishing component patterns
+                and TypeScript conventions adopted team-wide.</li>
+              <li>Ensured <strong>WCAG 2.1 AA</strong> accessibility compliance through semantic HTML, ARIA attributes,
+                keyboard-navigation testing, and Lighthouse audits.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">React.js</span>
+              <span class="exp-tech-tag">Next.js</span>
+              <span class="exp-tech-tag">TypeScript</span>
+              <span class="exp-tech-tag">Jest</span>
+              <span class="exp-tech-tag">React Testing Library</span>
+              <span class="exp-tech-tag">SSR/SSG</span>
+              <span class="exp-tech-tag">WCAG 2.1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLI / RCBC -->
+        <div class="exp-item reveal" data-delay="120">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">Software Engineer, Full-Stack (Mid-Level)</div>
+                <div class="exp-company">SLI Inc. &nbsp;·&nbsp; <span style="opacity:0.7">Project: RCBC – Rizal
+                    Commercial Banking Corporation</span></div>
+              </div>
+              <div class="exp-period">May 2024 – Sept 2024</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Designed and developed multiple <strong>secure, banking-grade Blazor modules</strong> using ASP.NET
+                and MS SQL Server for one of the Philippines' top universal banks supporting millions of customer
+                accounts.</li>
+              <li>Implemented <strong>financial-industry security standards</strong> across all interfaces: input
+                validation, role-based access control, audit logging, and OWASP Top-10 mitigations — passing internal
+                security review on first submission.</li>
+              <li>Optimized <strong>Blazor data-binding patterns</strong> and database queries to substantially reduce
+                dashboard render times for high-traffic banking dashboards.</li>
+              <li>Drove technical discussions with senior architects and translated complex banking requirements from
+                business analysts into clean, maintainable, testable UI workflows.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">ASP.NET</span>
+              <span class="exp-tech-tag">Blazor</span>
+              <span class="exp-tech-tag">MS SQL Server</span>
+              <span class="exp-tech-tag">C#</span>
+              <span class="exp-tech-tag">OWASP</span>
+              <span class="exp-tech-tag">RBAC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Freelance Shopify -->
+        <div class="exp-item reveal" data-delay="180">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">Web Developer, Freelance (Mid-Level)</div>
+                <div class="exp-company">Independent / Self-Employed</div>
+              </div>
+              <div class="exp-period">Jan 2023 – Mar 2024</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Designed and developed <strong>custom Shopify eCommerce storefronts</strong> for international clients
+                Zoe Kratzmann and Dunne Constructions using Shopify Liquid, JavaScript, and Tailwind CSS.</li>
+              <li>Implemented mobile-first, fully responsive layouts achieving <strong>strong Lighthouse mobile
+                  scores</strong> and consistent UX across desktop, tablet, and mobile devices.</li>
+              <li>Customized Shopify themes, product pages, and checkout flows to match brand guidelines and noticeably
+                <strong>improve conversion rates</strong> through faster page loads and clearer CTAs.
+              </li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">Shopify Liquid</span>
+              <span class="exp-tech-tag">JavaScript</span>
+              <span class="exp-tech-tag">Tailwind CSS</span>
+              <span class="exp-tech-tag">CRO</span>
+              <span class="exp-tech-tag">Mobile-First</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Intervenn Biosciences -->
+        <div class="exp-item reveal" data-delay="240">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">Software Engineer (Mid-Level)</div>
+                <div class="exp-company">Intervenn Biosciences &nbsp;<span style="opacity:0.6;font-size:0.8rem">·
+                    US-based biotech</span></div>
+              </div>
+              <div class="exp-period">Jan 2021 – Nov 2022</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Delivered frontend for <strong>3 R&amp;D platforms</strong> (Project Elevate, Project Herald AR,
+                Project Lumina) using React.js and Vue.js — supporting biomarker research workflows used by research
+                scientists.</li>
+              <li>Built <strong>interactive dashboards and data visualization components</strong> processing large
+                biological datasets — optimized rendering with virtualization and memoization to handle high data
+                volumes without UI lag.</li>
+              <li>Pioneered <strong>Augmented Reality (AR) web features</strong> that became a key product
+                differentiator in biotech demos and stakeholder presentations.</li>
+              <li>Mentored junior developers, led weekly code reviews, and established shared component templates
+                adopted across all 3 platforms — improving code consistency and onboarding speed.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">React.js</span>
+              <span class="exp-tech-tag">Vue.js</span>
+              <span class="exp-tech-tag">AR (Web)</span>
+              <span class="exp-tech-tag">Data Visualization</span>
+              <span class="exp-tech-tag">Virtualization</span>
+              <span class="exp-tech-tag">Unity</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pro-Solution -->
+        <div class="exp-item reveal" data-delay="300">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">Web Developer</div>
+                <div class="exp-company">Pro-Solution, Inc.</div>
+              </div>
+              <div class="exp-period">2020 – 2021</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Built the frontend of the <strong>Accounting Management System (AMS)</strong> as a desktop-grade web
+                application using React.js and Electron.js — deployed to accounting professionals across the firm.</li>
+              <li>Designed numerous <strong>complex form workflows, data tables, and reporting modules</strong> tailored
+                to accounting and finance use cases, substantially reducing manual data entry time.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">React.js</span>
+              <span class="exp-tech-tag">Electron.js</span>
+              <span class="exp-tech-tag">Desktop App</span>
+              <span class="exp-tech-tag">Reporting</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DDT Konstract -->
+        <div class="exp-item reveal" data-delay="360">
+          <div class="exp-card">
+            <div class="exp-meta">
+              <div>
+                <div class="exp-role">SAP ABAP Developer</div>
+                <div class="exp-company">DDT Konstract, Inc.</div>
+              </div>
+              <div class="exp-period">2018 – 2020</div>
+            </div>
+            <ul class="exp-desc">
+              <li>Developed and maintained <strong>enterprise SAP applications</strong> using ABAP alongside web modules
+                built in ASP.NET — built internal tools and admin interfaces that streamlined operational reporting.
+              </li>
+              <li>Delivered solutions across <strong>multiple business units</strong>, bridging legacy SAP systems with
+                modern web interfaces.</li>
+            </ul>
+            <div class="exp-tech">
+              <span class="exp-tech-tag">SAP ABAP</span>
+              <span class="exp-tech-tag">ASP.NET</span>
+              <span class="exp-tech-tag">Enterprise Systems</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="parallax-section">
+    <div class="section-inner">
+      <div class="reveal" style="margin-bottom:0">
+        <div class="section-tag">Featured Work</div>
+        <h2 class="section-title">Production <span>projects</span></h2>
+        <p class="section-subtitle">
+          Real-world applications shipped to real users — spanning healthcare, eCommerce, banking, biotech, and beyond.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal" data-delay="0">
+          <div>
+            <span class="project-badge badge-live">🟢 Live</span>
+            <div class="project-title">CrossWorld Church Platform</div>
+          </div>
+          <p class="project-desc">
+            Full-stack church web platform with real-time chat, member profiling, mentoring workflows, reporting
+            dashboards, and a complete Learning Management System (LMS). Designed Postgres schema with row-level
+            security policies.
+          </p>
+          <div class="project-stack">
+            <span>Next.js</span><span>Supabase Realtime</span><span>Tailwind</span><span>Postgres
+              RLS</span><span>LMS</span>
+          </div>
+          <a href="https://crossworld-church-web-app.vercel.app" target="_blank" rel="noopener" class="project-link">
+            View Live →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="80">
+          <div>
+            <span class="project-badge badge-live">🟢 Live</span>
+            <div class="project-title">CompMed Healthcare Platform</div>
+          </div>
+          <p class="project-desc">
+            Healthcare marketing landing page and internal Laboratory System. Marketing site achieved strong Lighthouse
+            scores through SSG and image optimization. Lab system built with ASP.NET and Blazor for compliance.
+          </p>
+          <div class="project-stack">
+            <span>Next.js</span><span>TypeScript</span><span>Supabase</span><span>ASP.NET</span><span>Blazor</span>
+          </div>
+          <a href="https://centraloccupationalmedicineproviders.com" target="_blank" rel="noopener"
+            class="project-link">
+            View Live →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="160">
+          <div>
+            <span class="project-badge badge-full">📦 Full-Stack</span>
+            <div class="project-title">Jodimar Inventory System</div>
+          </div>
+          <p class="project-desc">
+            Full-stack inventory platform for a local grocery business. Features stock tracking, sales recording, and
+            comprehensive reporting modules supporting daily operations with real-time data updates.
+          </p>
+          <div class="project-stack">
+            <span>Next.js</span><span>Supabase</span><span>Tailwind CSS</span><span>TypeScript</span>
+          </div>
+          <a href="#projects" class="project-link">
+            View Details →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="0">
+          <div>
+            <span class="project-badge badge-biotech">🔬 Biotech</span>
+            <div class="project-title">Intervenn R&D Platforms</div>
+          </div>
+          <p class="project-desc">
+            Frontend for 3 R&D platforms (Project Elevate, Herald AR, Lumina) supporting biomarker research. Built
+            interactive dashboards with data virtualization and pioneered AR web features for biotech demos.
+          </p>
+          <div class="project-stack">
+            <span>React.js</span><span>Vue.js</span><span>AR Web</span><span>Unity</span><span>Data Viz</span>
+          </div>
+          <a href="#projects" class="project-link">
+            View Details →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="80">
+          <div>
+            <span class="project-badge badge-fintech">🏦 Fintech</span>
+            <div class="project-title">RCBC Banking Modules</div>
+          </div>
+          <p class="project-desc">
+            Secure, banking-grade Blazor modules for RCBC — one of the Philippines' top universal banks. Implemented
+            OWASP Top-10 mitigations, RBAC, audit logging, and optimized query performance for high-traffic dashboards.
+          </p>
+          <div class="project-stack">
+            <span>Blazor</span><span>ASP.NET</span><span>MS SQL</span><span>OWASP</span><span>RBAC</span>
+          </div>
+          <a href="#projects" class="project-link">
+            View Details →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="160">
+          <div>
+            <span class="project-badge badge-ecom">🛍️ eCommerce</span>
+            <div class="project-title">Shopify International Storefronts</div>
+          </div>
+          <p class="project-desc">
+            Custom Shopify storefronts for international clients Zoe Kratzmann and Dunne Constructions. Mobile-first
+            responsive layouts with optimized checkout flows, improving conversion rates through faster page loads.
+          </p>
+          <div class="project-stack">
+            <span>Shopify Liquid</span><span>JavaScript</span><span>Tailwind CSS</span><span>CRO</span>
+          </div>
+          <a href="#projects" class="project-link">
+            View Details →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="0">
+          <div>
+            <span class="project-badge badge-desktop">🖥️ Desktop App</span>
+            <div class="project-title">Accounting Management System</div>
+          </div>
+          <p class="project-desc">
+            Desktop-grade web application (AMS) deployed to accounting professionals at Pro-Solution, Inc. Complex form
+            workflows, data tables, and reporting modules tailored to finance use cases.
+          </p>
+          <div class="project-stack">
+            <span>React.js</span><span>Electron.js</span><span>Desktop</span><span>Finance</span>
+          </div>
+          <a href="#projects" class="project-link">
+            View Details →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="80">
+          <div>
+            <span class="project-badge badge-live">🟢 Live</span>
+            <div class="project-title">DDT Konstract Enterprise</div>
+          </div>
+          <p class="project-desc">
+            Enterprise SAP applications and web modules for DDT Konstract, Inc. Internal tools and admin interfaces that
+            streamlined operational reporting across multiple business units, bridging legacy SAP with modern web.
+          </p>
+          <div class="project-stack">
+            <span>SAP ABAP</span><span>ASP.NET</span><span>Enterprise</span>
+          </div>
+          <a href="https://ddtkonstract.com" target="_blank" rel="noopener" class="project-link">
+            View Live →
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-delay="160"
+          style="background:linear-gradient(135deg,rgba(108,99,255,0.08),rgba(0,212,255,0.04));border-color:rgba(108,99,255,0.25);align-items:center;justify-content:center;text-align:center;min-height:200px">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem">🚀</div>
+          <div class="project-title" style="font-size:0.95rem;color:var(--text-secondary)">More on GitHub</div>
+          <p class="project-desc" style="text-align:center;margin-top:0.5rem">
+            Additional projects, experiments, and open-source contributions.
+          </p>
+          <a href="https://github.com/jeroxzi" target="_blank" rel="noopener" class="project-link"
+            style="margin-top:0.25rem">
+            github.com/jeroxzi →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ===== EDUCATION ===== -->
+  <section id="education" style="background:linear-gradient(180deg,var(--bg-dark) 0%,#060818 100%)">
+    <div class="section-inner" style="padding:5rem 2rem">
+      <div class="reveal" style="text-align:center;margin-bottom:3rem">
+        <div class="section-tag" style="justify-content:center">Education & Certifications</div>
+        <h2 class="section-title">Foundations of <span>excellence</span></h2>
+      </div>
+
+      <div
+        style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:800px;margin:0 auto">
+
+        <div class="highlight-item reveal" style="padding:2rem;text-align:center" data-delay="0">
+          <div style="font-size:2rem;margin-bottom:1rem">🎓</div>
+          <div
+            style="font-size:0.7rem;color:var(--accent);font-family:var(--font-mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.5rem">
+            2016 – 2018</div>
+          <div style="font-weight:700;font-size:1rem;margin-bottom:0.4rem">Bachelor of Science in Information Technology
+          </div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">AMA Computer Learning Center, Meycauayan</div>
+        </div>
+
+        <div class="highlight-item reveal" style="padding:2rem;text-align:center" data-delay="100">
+          <div style="font-size:2rem;margin-bottom:1rem">📜</div>
+          <div
+            style="font-size:0.7rem;color:var(--accent2);font-family:var(--font-mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:0.5rem">
+            2019</div>
+          <div style="font-weight:700;font-size:1rem;margin-bottom:0.4rem">Web Development NC III</div>
+          <div style="font-size:0.85rem;color:var(--text-muted)">TESDA — Technical Education and Skills Development
+            Authority</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-tag reveal">Contact</div>
+      <h2 class="section-title reveal" style="font-size:clamp(2rem,5vw,3rem)">
+        Let's build something <span>great</span> together
+      </h2>
+      <p class="section-subtitle reveal">
+        Open to full-time roles, freelance projects, and technical collaborations.
+        I respond within 24 hours.
+      </p>
+
+      <div class="contact-cards reveal">
+        <a href="mailto:jeroxzi16@gmail.com" class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">jeroxzi16@gmail.com</div>
+        </a>
+        <a href="tel:+639358333705" class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value">+63 935 833 3705</div>
+        </a>
+        <a href="https://github.com/jeroxzi" target="_blank" rel="noopener" class="contact-card">
+          <div class="contact-card-icon">💻</div>
+          <div class="contact-card-label">GitHub</div>
+          <div class="contact-card-value">github.com/jeroxzi</div>
+        </a>
+      </div>
+
+      <div class="contact-cta-group reveal">
+        <a href="mailto:jeroxzi16@gmail.com" class="btn-primary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path
+              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          Send a Message
+        </a>
+        <a href="https://jeroxzi.github.io/webportfolio" target="_blank" rel="noopener" class="btn-secondary">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+          View Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>
+      Designed & Built by <a href="mailto:jeroxzi16@gmail.com">Jeroxzi Viduya</a> &nbsp;·&nbsp;
+      Frontend & Full-Stack Engineer &nbsp;·&nbsp;
+      Bulacan, Philippines &nbsp;·&nbsp;
+      <a href="https://github.com/jeroxzi" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </footer>
+
+  <!-- ===== PARTICLE CANVAS SCRIPT ===== -->
+  <script>
+    (function () {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+      let W, H, particles = [];
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+      }
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * W;
+          this.y = Math.random() * H;
+          this.r = Math.random() * 1.5 + 0.3;
+          this.dx = (Math.random() - 0.5) * 0.3;
+          this.dy = (Math.random() - 0.5) * 0.3;
+          this.life = Math.random();
+          this.maxLife = Math.random() * 0.5 + 0.3;
+          this.color = Math.random() > 0.5 ? '108,99,255' : '0,212,255';
+        }
+        update() {
+          this.x += this.dx;
+          this.y += this.dy;
+          this.life += 0.003;
+          if (this.life > this.maxLife || this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset();
+        }
+        draw() {
+          const alpha = Math.sin((this.life / this.maxLife) * Math.PI) * 0.6;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${this.color},${alpha})`;
+          ctx.fill();
+        }
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+      for (let i = 0; i < 120; i++) particles.push(new Particle());
+
+      function loop() {
+        ctx.clearRect(0, 0, W, H);
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 100) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(108,99,255,${(1 - dist / 100) * 0.08})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(loop);
+      }
+      loop();
+    })();
+  </script>
+
+  <!-- Skill bar animation -->
+  <script>
+    document.querySelectorAll('.skill-bar-fill').forEach(bar => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            bar.style.width = bar.dataset.width;
+            observer.unobserve(bar);
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(bar);
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
